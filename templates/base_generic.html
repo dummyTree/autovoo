@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="US-eng">
+<head>
+	{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+</head>
+
+<header>
+
+</header>
+<body class='email-page'>
+<div class='grandparent-container'>
+	<div class="parent-container">
+		<div class='input-div'>
+			<ul class ='inputField' >
+			{% block content %}{% endblock %}
+			</ul>
+		</div>
+		<div class='editabletextbox' contenteditable='true'>
+		{% block emailstring %}
+		{% endblock %}
+		</div>
+	</div>
+</div>
+<body>
+
+</html>

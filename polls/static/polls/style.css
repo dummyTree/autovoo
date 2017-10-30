@@ -1,0 +1,215 @@
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+body {
+	background-color: rgba(0,120,193,0.7);
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+}
+
+/*
+---------------------------------------------------------
+
+		home.html & login + register buttons css
+
+---------------------------------------------------------
+*/
+.home-page-container{
+	margin-top: 50vh;
+	text-align: center;
+}
+
+.login-button-container{
+	display: inline-flex;
+	border: solid;
+	border-width: 0.5px;
+	border-color:#ffffff;
+	width: 20vw;
+	height: 8vh;
+	text-align: center;
+	border-radius: 5px;
+	margin-top:3px;
+}
+
+.register-button-container{
+	display: inline-flex;
+	border: solid;
+	border-width: 0.5px;
+	border-color:#ffffff;
+	width: 20vw;
+	height: 8vh;
+	text-align: center;
+	border-radius: 5px;
+	margin-top:3px;
+}
+
+.login-button-container:hover{
+	background: rgba(255,210,129,0.9);
+}
+.register-button-container:hover{
+	background: rgba(255,210,129,0.9);
+}
+
+/*
+---------------------------------------------------------
+
+		base_login.html & extension.html css
+
+---------------------------------------------------------
+*/
+
+#auto-vu{
+	margin-top: 15vh;
+	margin-left: 15vw;
+	height: 20vh;
+	width: 40vw;
+}
+
+a.link-login-screen {
+	margin:auto;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.login-page-main-container{
+	display: block;
+	margin-top: 10vh;
+	color: #ffffff;
+	text-align: center;
+
+}
+
+
+input#submit{
+	background: none;
+	border:none;
+	margin:auto;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#id_username{
+	padding: 5px;
+	width: 20vw;
+	height: 8vh;
+	border-radius: 10px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+#id_password{
+	
+	padding: 5px;
+	height:8vh;
+	width: 20vw;
+	text-align: center;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+a.lost-password{
+	text-decoration: none;
+	color:white;
+}
+
+
+/*
+---------------------------------------------------------
+
+		base_generic.html & extension index2.html css
+
+---------------------------------------------------------
+*/
+
+body.email-page{
+	background-color: white;
+	min-height: 100%;
+
+}
+a.emaillink{
+	text-decoration: none;
+}
+
+
+.parent-container{
+	display: flex;
+	position: absolute;
+	align-items: stretch;
+	overflow: all;
+	min-height: 100%;
+	margin-bottom: 10vh;
+}
+
+.input-div{
+	width:25vw;
+	min-height: 100%;
+	padding-right: 5vw;
+	border-radius: 10px;
+	background-color: rgba(0,120,193,0.7);
+
+
+}
+.editabletextbox{
+	overflow: scroll;
+	width:50vw;
+	min-height: 100%;
+	padding: 5vw;
+	margin-left: 5vw;
+	border-radius: 10px;
+	background-color: rgba(255,210,129,0.9);
+}
+
+.inputform-css{
+	width: 5vw;
+}
+#id_name{
+	text-align: center;
+	border-radius: 10px;
+	width: 20vw;
+	height: 5vh;
+}
+#id_code{
+	text-align: center;
+	border-radius: 10px;
+	margin-top: 5px;
+	width: 20vw;
+	height: 5vh;
+}
+
+/*
+---------------------------------------------------------
+
+		base_login.html & extension register.html css
+
+---------------------------------------------------------
+*/
+
+#reg{
+	text-align: center;
+	border-radius: 10px;
+	width: 20vw;
+	height: 5vh;
+}
+
+.flexy{
+
+	display: inline-block;
+	margin-left: 30vw;
+	width: 30vw;
+	flex-flow: column;
+}
+
+

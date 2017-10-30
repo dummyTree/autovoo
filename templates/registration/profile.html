@@ -1,0 +1,16 @@
+{% extends "base_profile.html" %}
+
+{% block content %}
+
+<div class='intro' contenteditable='true'>
+
+</div>
+<div class="flexy">
+<form method='POST' action=".">
+	{% csrf_token %}
+	{{ form }}
+
+	<input type="submit" name="submit">
+</form>
+</div>
+{% endblock %}

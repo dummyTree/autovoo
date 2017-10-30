@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="eng-US">
+	<head>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+		
+	</head>
+<body>
+	<header>
+
+		<img src="{% static '/polls/auto2.png' %}" id='auto-vu'>
+	</header>
+	<div class='login-page-main-container'>
+
+		<ul class ='inputField'>
+			{% block content %}{% endblock %}
+		</ul>
+	</div>	
+</body>
+</html>

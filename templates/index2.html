@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<form action="/polls/" method="post" class="inputform-css">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}
+
+{% block emailstring %}
+{% autoescape off %}
+{{ name_String }}
+<br/><br/>{{ thanks_String }}
+<br/><br/>{{ accepted_Info }}
+<br/><br/>{{ admission_Info }}
+<br/><br/>{{ additional_Info }}
+<br/><br/>{{ advanced_Standing_Info }}
+<br/><br/>{{ scholarship_Info }}
+<br/><br/>{{ pathway_Info }}
+<br/><br/>{{ close_off }}
+{% endautoescape %}
+{% endblock %}
