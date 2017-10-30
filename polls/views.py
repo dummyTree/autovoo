@@ -15,7 +15,7 @@ import urllib.request
 
 def index(request):
 	queryuuid=uuid.uuid4()
-
+	queryuuid=str(queryuuid)[:24]
 	my_Query = Queryer.objects.first()
 	#this begins form input request
 	form = inputForm(instance=my_Query)
