@@ -8,7 +8,7 @@ from django.forms import ModelForm
 #form writes to query
 class Queryer(models.Model):
 	user                 = models.ForeignKey(User,)
-	uuidqueryer          = models.CharField(max_length=25)
+	uuidqueryer          = models.CharField(max_length=50)
 	name                 = models.CharField(max_length=200)
 	code                 = models.CharField(max_length=15)
 	international        = models.BooleanField()
