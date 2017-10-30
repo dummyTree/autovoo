@@ -77,10 +77,10 @@ def index(request):
 		applications = soup.find('div', id="how-to-apply")
 		script = Scripts.objects.filter(user=request.user).values('close_off_DOM').first()
 		signoff = "<br/><br/>Kind regards,<br/>{}<br/>Student Service Officer, VUHQ<br/>Phone +61 3 9919 6100 <br/>For additional information, please visit <a href='https://askvu.vu.edu.au/'>ASKVU</a>".format(request.user.get_short_name())
-
+		close_off = close_off.replace('/-email-sign-off-/',signoff)
 		close_off = script['close_off_DOM'].replace('/-first-name-/',request.user.get_short_name())
 		close_off = close_off.replace('/-course-title-/',course_Title)
-		close_off = close_off.replace('/-email-sign-off-/',signoff)
+		
 
 		###################################ADDITIONAL INFORMATION###################################
 
