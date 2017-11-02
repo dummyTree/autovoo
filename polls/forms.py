@@ -60,7 +60,12 @@ class inputForm(ModelForm):
         model = Queryer
         widgets = {
             'name': forms.TextInput(attrs={'placeholder':'Students Name'}),
-            'code': forms.TextInput(attrs={'placeholder':'Course Code'})
+            'code': forms.TextInput(attrs={'placeholder':'Course Code'}),
+            # 'international':forms.CheckboxInput(attrs={'checked':'unchecked'}),
+            # 'pathways':forms.CheckboxInput(attrs={'checked':'unchecked'}),
+            # 'scholarship':forms.CheckboxInput(attrs={'checked':'unchecked'}),
+            # 'advancedstanding':forms.CheckboxInput(attrs={'checked':'unchecked'}),
+            # 'year12':forms.CheckboxInput(attrs={'checked':''}),
 
         }
         fields = ['name','code','international','pathways','scholarship','advancedstanding','year12']

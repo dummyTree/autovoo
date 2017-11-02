@@ -4,6 +4,7 @@
 <form action="/polls/" method="post" class="inputform-css">
     {% csrf_token %}
     {{ form }}
+    <div id='international'>International</div>
     <input type="submit" value="Submit" />
 </form>
 {% endblock %}

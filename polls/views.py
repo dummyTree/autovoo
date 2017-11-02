@@ -61,12 +61,29 @@ def index(request):
 		soup = BeautifulSoup(sauce,'lxml')
 		results = soup.find("ol", class_="results-list")
 
-		for url in results.find_all('a'):
-			course = url.get('href')
-			print(course)
-			if(course_Code in course):
-				course_html = course
-				course_Link = index_html+course_html
+		if results is not None:
+			for url in results.find_all('a'):
+				course = url.get('href')
+				print(course)
+				if(course_Code.lower() in course.lower()):
+					print(course_Code.lower())
+					print(course.lower())
+					course_html = course
+					course_Link = index_html+course_html
+		
+		else:
+			if international:
+				name_String = "International students are not being accepted for that course. Please check our website for more options."
+
+			else:
+				name_String = "Error Course not found"
+
+			return render(
+				request,
+				'index2.html',
+				{'form':form,'name_String':name_String},
+				)
+
 
 
 		sauce = urllib.request.urlopen(course_Link)
@@ -80,7 +97,7 @@ def index(request):
 
 		close_off = script['close_off_DOM'].replace('/-email-sign-off-/',signoff)
 		close_off = close_off.replace('/-course-title-/',course_Title)
-		close_off = close_off.replace('/-first-name-/',request.user.get_short_name())
+		close_off = close_off.replace('/-first-name-/',name)
 
 		###################################ADDITIONAL INFORMATION###################################
 
@@ -118,9 +135,12 @@ def index(request):
 					accepted_Info = script['ApplicationDateMature'].replace('/-online-close-date-/',onlinedate)
 		else:
 			script = Scripts.objects.filter(user=request.user).values('AcceptingApplicationsINT','close_off_INT').first()
+			applyLinks ="<br><br><a href='http://eaams.vu.edu.au/'>Direct Online Application</a><br><br><a href='http://eaams.vu.edu.au/BrowseAgents.aspx'>Find An Education Agent</a>"
 			accepted_Info = script['AcceptingApplicationsINT']
+			accepted_Info = accepted_Info.replace('/-apply-links-international-/',applyLinks)
+
 			close_off = script['close_off_INT'].replace('/-first-name-/',name)
-			close_off = close_off.replace('/-course-title-/',name)
+			close_off = close_off.replace('/-course-title-/',course_Title)
 			close_off = close_off.replace('/-vui-contact-details-/',vuicontact)
 		
 
@@ -135,18 +155,21 @@ def index(request):
 		pathway_Info =""
 		if(pathways==True):
 			pathway_Soup = soup.find('div', class_="pathway")
-			pathway_Course = pathway_Soup.text
-			pathway_Amount = len(pathway_Soup)
-			
-			pathway= "It is ok if you do not meet those requirements, we pride ourselves in not closing doors on students who are willing to study. Our pathway options give gauranteed entry into further study."
-			
-			print(pathway_Amount)
-			
-			if(pathway_Amount==1):
-				pathway_Info= pathway+"For the {} we have one pathway option which I have listed below, please take a look at the course information page linked and let me know if you need more information on this course:<br/><br/>For the {}. You will also be granted gauranteed entry into the {} and all credit that will be applied will be handled automatically by our pathways team.".format(course_Title,pathway_Course,course_Title)
-			if(pathway_Amount>1):
-				pathway_Info= pathway+"For the {} we have several pathway option which I have listed below, please take a look at the course information page linked and let me know if you need more information on this course:<br/><br/>For the {}. You will also be granted gauranteed entry into the {}and all credit that will be applied will be handled automatically by our pathways team.".format(course_Title,pathway_Course,course_Title)
-				################################### Scholarships ###################################
+			if pathway_Soup:
+				pathway_Course = pathway_Soup.text
+				pathway_Amount = len(pathway_Soup)
+				
+				pathway= "It is ok if you do not meet those requirements, we pride ourselves in not closing doors on students who are willing to study. Our pathway options give gauranteed entry into further study."
+				
+				print(pathway_Amount)
+				
+				if(pathway_Amount==1):
+					pathway_Info= pathway+"For the {} we have one pathway option which I have listed below, please take a look at the course information page linked and let me know if you need more information on this course:<br/><br/>For the {}. You will also be granted gauranteed entry into the {} and all credit that will be applied will be handled automatically by our pathways team.".format(course_Title,pathway_Course,course_Title)
+				if(pathway_Amount>1):
+					pathway_Info= pathway+"For the {} we have several pathway option which I have listed below, please take a look at the course information page linked and let me know if you need more information on this course:<br/><br/>For the {}. You will also be granted gauranteed entry into the {}and all credit that will be applied will be handled automatically by our pathways team.".format(course_Title,pathway_Course,course_Title)
+			else:
+				pathway_Info = "Pathway does not exist"
+		################################### Scholarships ###################################
 		
 
 

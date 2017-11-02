@@ -1,0 +1,94 @@
+/*
+---------------------------------------------------------
+
+    Email Template Creation
+
+---------------------------------------------------------
+*/
+
+body {
+    background-color: rgba(0,120,193,0.7);
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    text-align: center;
+}
+
+input#submit{
+  background: none;
+  border:none;
+  margin:auto;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.regemail{
+  background-color:rgba(255,210,129,0.9);
+  border-radius: 10px;
+  padding: 25px;
+  margin:20px;
+}
+#maincontainer {
+  margin-left: 30%;
+  margin-top:10%;
+}
+
+#contentContainer {
+
+  width:550px;
+  height:850px;
+  overflow: hidden;
+}
+
+#wrapper {
+
+  width:2750px;
+  transform: translate3d(0, 0, 0);
+  transition: transform .5s ease-in-out;
+  transform: translate3d(0,0,0);
+}
+.slide{
+  float: left;
+  width: 550px;
+  height: 350px;
+  white-space: normal;
+  background-repeat:no-repeat;
+}
+
+#navLinks {
+  text-align: center;
+  width: 550px;
+}
+#navLinks ul {
+  margin:0px;
+  padding: 0px;
+  display: inline-block;
+  margin-top: 6px;
+}
+#navLinks ul li {
+  float: left;
+  text-align: center;
+  margin: 10px;
+  list-style: none;
+  cursor; pointer;
+  background-color: #CCCCCC;
+  padding: 5px;
+  border-radius: 50%;
+  border: black 5px solid;
+}
+#navLinks ul li:hover {
+  background-color: #FFFF00;
+}
+#navLinks ul li.active{
+    background-coulor:#333333;
+    color:#FFFFFF;
+    outline-width: 7px;
+}
+#navLinks ul li.active:hover {
+  background-color: #484848
+  color: #FFFFFF;
+}

@@ -1,16 +1,75 @@
 {% extends "base_profile.html" %}
 
+
 {% block content %}
+<h1>Email Templates</h1>
+<div id='maincontainer'>
+	<div id="contentContainer">
+		<div id="wrapper">
+			<div class="slide">
+				<p>You will be able to change your email templates by editing the text in the yellow boxes below. By clicking on the left and right Arrows you can view all of sections in our email templates that are editable. When you are done please hit the save button located below:</p>
+				<h4>Intro/Hello</h4>
+				<div class='regemail' contenteditable='true'  id='HiScript'></div>
+				<h4> Confirmation of Enquiry</h4>
+				<div class='regemail' contenteditable='true'   id='ThanksScript'></div>
+			</div>
 
-<div class='intro' contenteditable='true'>
+			<div class="slide">
+				<p>This page contains email template structure for how to apply based on the type of student you are emailing.<p>
+				<h4>How to apply? (For Mature Age)</h4>
+				<div class='regemail' contenteditable='true' id='ApplicationDateMature'></div>
+				<h4>How to apply? (For Year 12)</h4>
+				<div class='regemail' contenteditable='true'  id='ApplicationDateYear12'></div>
+				<h4>How to apply? (For Generic)</h4>
+				<div class='regemail' contenteditable='true'  id='ApplicationDateGeneric'></div>
+			</div>
 
+			<div class="slide">
+				<p>This slide contains email template structure for how to apply based on the type of student you are emailing.<p>
+				<h4>We are not accepting Applications</h4>
+				<div class='regemail' contenteditable='true'  id='AcceptingApplicationsNo'></div>
+				<h4>We only accept direct applications (ie. some Post Grad courses)</h4>
+				<div class='regemail' contenteditable='true'  id='AcceptingApplicationsPG'></div>
+				<h4>How to apply? (For International Student)</h4>
+				<div class='regemail' contenteditable='true'  id='AcceptingApplicationsINT'></div>
+			</div>
+			<div class="slide">
+				<p>This slide contains extra information that can be added to the email</p>
+				<h4>Admission Requirements</h4>
+				<div class='regemail' contenteditable='true'   id='AdmissionInfo'></div>
+				<h4>Pathway Information</h4>
+				<div class='regemail' contenteditable='true'  id='PathwaysInfo'></div>
+				<h4>Scholarships Information</h4>
+				<div class='regemail' contenteditable='true'  id='ScholarshipInfo'></div>
+				<h4>Advanced Standing Information</h4>
+				<div class='regemail' contenteditable='true'  id='AdvancedStandingInfo'></div>
+			</div>
+			<div class="slide">
+				<p>This slide includes the wrap up details for the email</p>
+				<h4>Close off for Domestic Students</h4>
+				<div class='regemail' contenteditable='true'  id='Close_off_DOM'></div>
+				<h4>Close off for International students</h4>
+				<div class='regemail' contenteditable='true'   id='Close_off_INT'></div>
+			</div>
+		</div>
+	</div>
+	<div id="navLinks">
+		<ul>
+			<li class="itemLinks" data-pos="0px"></li>
+			<li class="itemLinks" data-pos="-550px"></li>
+			<li class="itemLinks" data-pos="-1100px"></li>
+			<li class="itemLinks" data-pos="-1650px"></li>
+			<li class="itemLinks" data-pos="-2200px"></li>
+		</ul>
+		
+	</div>
 </div>
-<div class="flexy">
+
+
 <form method='POST' action=".">
 	{% csrf_token %}
 	{{ form }}
 
-	<input type="submit" name="submit">
+	<input type="submit" name="submit" id='submit'>
 </form>
-</div>
 {% endblock %}

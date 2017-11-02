@@ -33,4 +33,25 @@ class EmailScripts(ModelForm):
 	#      # self.fields['ScholarshipInfo'].label = ''
 	class Meta:
 		model = Scripts
+		widgets = {
+		'HiScript': forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'ThanksScript': forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'ApplicationDateMature': forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'ApplicationDateYear12':forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'ApplicationDateGeneric':forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'AcceptingApplicationsNo':forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'AcceptingApplicationsPG':forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'AcceptingApplicationsINT':forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'AdmissionInfo': forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'PathwaysInfo':forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'ScholarshipInfo':forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'AdvancedStandingInfo':forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'close_off_DOM':forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+		'close_off_INT':forms.TextInput(attrs={'type':'hidden','class':'hiddeninput'}),
+
+		}
 		fields = [ 'HiScript','ThanksScript','ApplicationDateMature','ApplicationDateYear12','ApplicationDateGeneric','AcceptingApplicationsNo','AcceptingApplicationsPG','AcceptingApplicationsINT','AdmissionInfo','PathwaysInfo','ScholarshipInfo','AdvancedStandingInfo','close_off_DOM','close_off_INT']
+
+
+
+
