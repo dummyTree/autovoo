@@ -210,7 +210,9 @@ def index(request):
 
 		if(advanced_Standing==True):
 			script = Scripts.objects.filter(user=request.user).values('AdvancedStandingInfo').first()
+			advancedLink = '<a href="https://www.vu.edu.au/sites/default/files/student-connections/pdfs/A04-application-for-advanced-standing.pdf">Advanced Standing Form</a>'
 			advanced_Standing_Info = script['AdvancedStandingInfo']
+			advanced_Standing_Info = advanced_Standing_Info.replace('/-advanced-standing-form-/',advancedLink)
 
 		email_String = """
 		%s
