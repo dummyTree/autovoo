@@ -40,6 +40,7 @@ class CustomAuthForm(AuthenticationForm):
 
 
 class inputForm(ModelForm):
+
     name                 = models.CharField(max_length=200)
     code                 = models.CharField(max_length=15)
     international        = models.BooleanField()
@@ -48,20 +49,22 @@ class inputForm(ModelForm):
     advancedstanding     = models.BooleanField()
     year12               = models.BooleanField()
     def __init__(self, *args, **kwargs):
+         kwargs.setdefault("label_suffix", "")
          super(inputForm, self).__init__(*args, **kwargs)
          self.fields['name'].label = ''
          self.fields['code'].label = ''
-         # self.fields['international'].label = ''
-         # self.fields['pathways'].label = ''
-         # self.fields['scholarship'].label = ''
-         # self.fields['advancedstanding'].label = ''
-         # self.fields['year12'].label = ''
+         self.fields['international'].label = 'International'
+         self.fields['pathways'].label = 'Pathways'
+         self.fields['scholarship'].label = 'Scholarship'
+         self.fields['advancedstanding'].label = 'Advanced Standing'
+         self.fields['year12'].label = 'Year12'
+
     class Meta:
         model = Queryer
         widgets = {
             'name': forms.TextInput(attrs={'placeholder':'Students Name'}),
             'code': forms.TextInput(attrs={'placeholder':'Course Code'}),
-            # 'international':forms.CheckboxInput(attrs={'checked':'unchecked'}),
+            # 'international':forms.CheckboxInput(attrs={'label':'unchecked'}),
             # 'pathways':forms.CheckboxInput(attrs={'checked':'unchecked'}),
             # 'scholarship':forms.CheckboxInput(attrs={'checked':'unchecked'}),
             # 'advancedstanding':forms.CheckboxInput(attrs={'checked':'unchecked'}),

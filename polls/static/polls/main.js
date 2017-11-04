@@ -32,7 +32,38 @@ $('document').ready(function(){
 	$('#Close_off_INT').text(close_off_INT);
 	
 });
+setTimeout(loader,50)
 
+function loader(){
+	var hiscript = $('#HiScript').text()
+	$('#id_HiScript').val(hiscript);
+	var thanksScript = $('#ThanksScript').text()
+	$('#id_ThanksScript').val(thanksScript);
+	var applicationDateMature = $('#ApplicationDateMature').text()
+	$('#id_ApplicationDateMature').val(applicationDateMature);
+	var applicationDateYear12 = $('#ApplicationDateYear12').text()
+	$('#id_ApplicationDateYear12').val(applicationDateYear12);
+	var applicationDateGeneric = $('#ApplicationDateGeneric').text()
+	$('#id_ApplicationDateGeneric').val(applicationDateGeneric);
+	var acceptingApplicationsNo = $('#AcceptingApplicationsNo').text()
+	$('#id_AcceptingApplicationsNo').val(acceptingApplicationsNo);
+	var acceptingApplicationsPG = $('#AcceptingApplicationsPG').text()
+	$('#id_AcceptingApplicationsPG').val(acceptingApplicationsPG);
+	var acceptingApplicationsINT = $('#AcceptingApplicationsINT').text()
+	$('#id_AcceptingApplicationsINT').val(acceptingApplicationsINT);
+	var admissionInfo = $('#AdmissionInfo').text()
+	$('#id_AdmissionInfo').val(admissionInfo);
+	var pathwaysInfo = $('#PathwaysInfo').text()
+	$('#id_PathwaysInfo').val(pathwaysInfo);
+	var scholarshipInfo = $('#ScholarshipInfo').text()
+	$('#id_ScholarshipInfo').val(scholarshipInfo);
+	var advancedStandingInfo = $('#AdvancedStandingInfo').text()
+	$('#id_AdvancedStandingInfo').val(advancedStandingInfo);
+	var close_off_DOM = $('#Close_off_DOM').text()
+	$('#id_close_off_DOM').val(close_off_DOM);
+	var close_off_INT = $('#Close_off_INT').text()
+	$('#id_close_off_INT').val(close_off_INT);
+};
 // just querying the DOM...like a boss!
 var links = document.querySelectorAll(".itemLinks");
 var wrapper = document.querySelector("#wrapper");
@@ -70,44 +101,50 @@ function removeActiveLinks() {
 // Handle changing the slider position as well as ensure
 // the correct link is highlighted as being active
 function changePosition(link) {
-    var position = link.getAttribute("data-pos");
- 
+    var position = link.getAttribute("data-pos"); 
+ 	clicker = parseInt(position)
     var translateValue = "translate3d(" + position + ", 0px, 0)";
     wrapper.style.transform = translateValue;
- 
     link.classList.add("active");
 }
 
+var clicker = 0
+
 $(function(){
-	$('#submit').click(function(){
-	var hiscript = $('#HiScript').text()
-	$('#id_HiScript').val(hiscript);
-	var thanksScript = $('#ThanksScript').text()
-	$('#id_ThanksScript').val(thanksScript);
-	var applicationDateMature = $('#ApplicationDateMature').text()
-	$('#id_ApplicationDateMature').val(applicationDateMature);
-	var applicationDateYear12 = $('#ApplicationDateYear12').text()
-	$('#id_ApplicationDateYear12').val(applicationDateYear12);
-	var applicationDateGeneric = $('#ApplicationDateGeneric').text()
-	$('#id_ApplicationDateGeneric').val(applicationDateGeneric);
-	var acceptingApplicationsNo = $('#AcceptingApplicationsNo').text()
-	$('#id_AcceptingApplicationsNo').val(acceptingApplicationsNo);
-	var acceptingApplicationsPG = $('#AcceptingApplicationsPG').text()
-	$('#id_AcceptingApplicationsPG').val(acceptingApplicationsPG);
-	var acceptingApplicationsINT = $('#AcceptingApplicationsINT').text()
-	$('#id_AcceptingApplicationsINT').val(acceptingApplicationsINT);
-	var admissionInfo = $('#AdmissionInfo').text()
-	$('#id_AdmissionInfo').val(admissionInfo);
-	var pathwaysInfo = $('#PathwaysInfo').text()
-	$('#id_PathwaysInfo').val(pathwaysInfo);
-	var scholarshipInfo = $('#ScholarshipInfo').text()
-	$('#id_ScholarshipInfo').val(scholarshipInfo);
-	var advancedStandingInfo = $('#AdvancedStandingInfo').text()
-	$('#id_AdvancedStandingInfo').val(advancedStandingInfo);
-	var close_off_DOM = $('#Close_off_DOM').text()
-	$('#id_close_off_DOM').val(close_off_DOM);
-	var close_off_INT = $('#Close_off_INT').text()
-	$('#id_close_off_INT').val(close_off_INT);
+	checker();
+	$('.left').click(function(){
+		if(0>clicker){
+			clicker=clicker+550
+			clickerpx=clicker+"px"
+			translater = "translate3d(" + clickerpx + ", 0px, 0)";
+			wrapper.style.transform = translater
+		} 
+	})
+
+	$('.right').click(function(){
+		if(clicker>-2200){
+			clicker=clicker-550
+			clickerpx=clicker+"px"
+			translater = "translate3d(" + clickerpx + ", 0px, 0)";
+			wrapper.style.transform = translater;
+		} 
 	})
 });
+function checker(){
+	if(clicker>-2200 && clicker<-0){
+		right.style.opacity = 1
+		left.style.opacity = 1
+
+	}else{
+		if (clicker==-2200){
+			right.style.opacity = 0.5
+		}else if (clicker==0){
+			left.style.opacity = 0.5
+		}
+	}
+	setTimeout(checker,50);
+}
+
+
+
 

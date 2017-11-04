@@ -3,7 +3,23 @@
 
 {% block content %}
 <h1>Email Templates</h1>
+	<div class='prev-next-button-container'>
+	<div id='prev-next-buttons'>
+		<i class='arrow left' id='left'></i>
+		<i class='arrow right' id='right'></i>
+	</div>
+	</div>
 <div id='maincontainer'>
+	<div id="navLinks">
+	<ul>
+		<li class="itemLinks" data-pos="0px"></li>
+		<li class="itemLinks" data-pos="-550px"></li>
+		<li class="itemLinks" data-pos="-1100px"></li>
+		<li class="itemLinks" data-pos="-1650px"></li>
+		<li class="itemLinks" data-pos="-2200px"></li>
+	</ul>
+	
+	</div>
 	<div id="contentContainer">
 		<div id="wrapper">
 			<div class="slide">
@@ -15,7 +31,7 @@
 			</div>
 
 			<div class="slide">
-				<p>This page contains email template structure for how to apply based on the type of student you are emailing.<p>
+				<p>This page contains email template structure for how to apply based on the type of student you are emailing.</p>
 				<h4>How to apply? (For Mature Age)</h4>
 				<div class='regemail' contenteditable='true' id='ApplicationDateMature'></div>
 				<h4>How to apply? (For Year 12)</h4>
@@ -25,7 +41,7 @@
 			</div>
 
 			<div class="slide">
-				<p>This slide contains email template structure for how to apply based on the type of student you are emailing.<p>
+				<p>This slide contains email template structure for how to apply based on the type of student you are emailing.</p>
 				<h4>We are not accepting Applications</h4>
 				<div class='regemail' contenteditable='true'  id='AcceptingApplicationsNo'></div>
 				<h4>We only accept direct applications (ie. some Post Grad courses)</h4>
@@ -53,23 +69,16 @@
 			</div>
 		</div>
 	</div>
-	<div id="navLinks">
-		<ul>
-			<li class="itemLinks" data-pos="0px"></li>
-			<li class="itemLinks" data-pos="-550px"></li>
-			<li class="itemLinks" data-pos="-1100px"></li>
-			<li class="itemLinks" data-pos="-1650px"></li>
-			<li class="itemLinks" data-pos="-2200px"></li>
-		</ul>
-		
-	</div>
+
+
 </div>
 
 
 <form method='POST' action=".">
 	{% csrf_token %}
 	{{ form }}
-
-	<input type="submit" name="submit" id='submit'>
+<div class=submit-button-container>
+	<input type="submit" name="submit" id='submit' value='Save'>
+</div>
 </form>
 {% endblock %}

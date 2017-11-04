@@ -4,8 +4,9 @@
 <form action="/polls/" method="post" class="inputform-css">
     {% csrf_token %}
     {{ form }}
-    <div id='international'>International</div>
-    <input type="submit" value="Submit" />
+    <div class=input-sub-container>
+    <input type="submit" value="Submit" id='submit'/>
+	</div>
 </form>
 {% endblock %}
 

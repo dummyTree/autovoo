@@ -18,7 +18,7 @@ def index(request):
 	queryuuid=str(queryuuid)[:24]
 	my_Query = Queryer.objects.first()
 	#this begins form input request
-	form = inputForm(instance=my_Query)
+	form = inputForm(instance=my_Query,auto_id=False)
 	if request.method == 'POST':
 		form = inputForm(request.POST)
 		presaved = form.save(commit=False)

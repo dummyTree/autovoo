@@ -55,6 +55,27 @@ body {
 	background: rgba(255,210,129,0.9);
 }
 
+.inputform-css label{
+	display: block;;
+	line-height: 320%;
+	padding-right: 5px;
+	padding-left: 5px;
+	border: solid;
+	border-width: 0.5px;
+	border-color:#ffffff;
+	width: 20vw;
+	height: 8vh;
+	text-align: center;
+	border-radius: 5px;
+	margin-top:2vh;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #ffffff;	
+}
+input[type=checkbox]{
+    display: none;
+}
 /*
 ---------------------------------------------------------
 
@@ -103,6 +124,19 @@ input#submit{
 	text-decoration: none;
 }
 
+.input-sub-container{
+    display:block;
+    text-decoration:none;
+    color:white;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, rgba(0,120,193,0) 50%, rgba(255,210,129,0.9) 50%);
+    transition: background-position 1s;
+    padding:0 0 0 20px;
+    width:180px;
+}
+.colouring{
+    background-position: -100% 0;
+}
 #id_username{
 	padding: 5px;
 	width: 20vw;
@@ -189,6 +223,21 @@ a.emaillink{
 	height: 5vh;
 }
 
+.input-sub-container{
+	display: inline-flex;
+	border: solid;
+	border-width: 0.5px;
+	border-color:#ffffff;
+	width: 20vw;
+	height: 8vh;
+	text-align: center;
+	border-radius: 5px;
+	margin-top:20vh;
+}
+
+.colored{
+	background-color:rgba(255,210,129,0.9); 
+}
 /*
 ---------------------------------------------------------
 
