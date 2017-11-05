@@ -30,11 +30,17 @@ $('document').ready(function(){
 	$('#Close_off_DOM').text(close_off_DOM);
 	var close_off_INT = document.getElementById('id_close_off_INT').value
 	$('#Close_off_INT').text(close_off_INT);
+	loader()
 	
-});
-setTimeout(loader,50)
 
-function loader(){
+	$(function(){
+		$('#submit').click(function(){
+			loader()
+	
+		})
+	});
+
+	function loader(){
 	var hiscript = $('#HiScript').text()
 	$('#id_HiScript').val(hiscript);
 	var thanksScript = $('#ThanksScript').text()
@@ -63,7 +69,13 @@ function loader(){
 	$('#id_close_off_DOM').val(close_off_DOM);
 	var close_off_INT = $('#Close_off_INT').text()
 	$('#id_close_off_INT').val(close_off_INT);
-};
+}
+});
+
+
+
+
+
 // just querying the DOM...like a boss!
 var links = document.querySelectorAll(".itemLinks");
 var wrapper = document.querySelector("#wrapper");
@@ -144,7 +156,3 @@ function checker(){
 	}
 	setTimeout(checker,50);
 }
-
-
-
-

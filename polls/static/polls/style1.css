@@ -145,3 +145,27 @@ div.prev-next-button-container{
 #navLinks ul li.active:hover {
 
 }
+
+ .back-to-work {
+  display: inline-flex;
+  margin-left: 25%
+  position:fixed;
+  border: solid;
+  border-width: 0.5px;
+  border-color:#ffffff;
+  width: 20vw;
+  height: 8vh;
+  text-align: center;
+  border-radius: 5px;
+  margin-top:3px;
+  }
+a.back-to-work-button {
+  margin:auto;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}

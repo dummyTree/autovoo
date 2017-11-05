@@ -58,9 +58,6 @@ def regemail(request):
 
 
 	#if no: desplay default from user Generic
-	
-
-
 	else:
 		print('user does not exist')
 		if request.method == 'POST':
@@ -79,23 +76,7 @@ def regemail(request):
 			AdvancedStandingInfo = request.POST['AdvancedStandingInfo']
 			close_off_DOM =request.POST['close_off_DOM']
 			close_off_INT = request.POST['close_off_INT']
-			scripts.HiScript = HiScript
-			scripts.ThanksScript =ThanksScript
-			scripts.ApplicationDateMature = ApplicationDateMature
-			scripts.ApplicationDateYear12 = ApplicationDateYear12
-			scripts.ApplicationDateGeneric = ApplicationDateGeneric
-			scripts.AcceptingApplicationsNo = AcceptingApplicationsNo
-			scripts.AcceptingApplicationsPG = AcceptingApplicationsPG
-			scripts.AcceptingApplicationsINT = AcceptingApplicationsINT
-			scripts.AdmissionInfo = AdmissionInfo
-			scripts.PathwaysInfo = PathwaysInfo
-			scripts.ScholarshipInfo = ScholarshipInfo
-			scripts.AdvancedStandingInfo = AdvancedStandingInfo
-			scripts.close_off_DOM = close_off_DOM
-			scripts.close_off_INT = close_off_INT
-
-			print(HiScript)
-			newscripts = Scripts.objects.create(user=request.user, HiScript=HiScript, ThanksScript=ThanksScript)
+			newscripts = Scripts.objects.create(user=request.user, HiScript=HiScript, ThanksScript=ThanksScript,ApplicationDateMature=ApplicationDateMature,ApplicationDateYear12=ApplicationDateYear12,ApplicationDateGeneric=ApplicationDateGeneric,AcceptingApplicationsNo=AcceptingApplicationsNo,AcceptingApplicationsPG=AcceptingApplicationsPG,AcceptingApplicationsINT=AcceptingApplicationsINT,AdmissionInfo=AdmissionInfo,PathwaysInfo=PathwaysInfo,ScholarshipInfo=ScholarshipInfo,AdvancedStandingInfo=AdvancedStandingInfo,close_off_INT=close_off_INT,close_off_DOM=close_off_DOM)
 			
 		else:
 			generic = User.objects.filter(username='generic').first()
