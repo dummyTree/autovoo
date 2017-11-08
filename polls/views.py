@@ -29,6 +29,7 @@ def index(request):
 			presaved.user = request.user
 			presaved.uuidqueryer = queryuuid
 			presaved.save()
+			form = inputForm()
 		#this begins query code that scans website based on form
 		
 		checkuser = request.user
