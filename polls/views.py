@@ -136,7 +136,7 @@ def index(request):
 						accepted_Info = script['ApplicationDateYear12'].replace('/-VTAC-close-date-/',vtacdate)
 					else:
 						script = Scripts.objects.filter(user=request.user).values('ApplicationDateMature').first()
-						onlinedate = "<b>{}</b>".format(bold[0].text)
+						onlinedate = "<b>{}</b>".format(bold[1].text)
 						accepted_Info = script['ApplicationDateMature'].replace('/-online-close-date-/',onlinedate)
 			else:
 				script = Scripts.objects.filter(user=request.user).values('AcceptingApplicationsINT','close_off_INT').first()
