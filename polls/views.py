@@ -96,7 +96,7 @@ def index(request):
 			soup = BeautifulSoup(sauce,'lxml')
 			course_Title = soup.find('h1').text
 
-			applications = soup.find('section', id="how-to-apply")
+			applications = soup.find('section', id="block-panels-mini-vu-courses-hta-rhs")
 			script = Scripts.objects.filter(user=request.user).values('close_off_DOM').first()
 			signoff = "<br/><br/>Kind regards,<br/>{}<br/>Student Service Officer, VUHQ<br/>Phone +61 3 9919 6100 <br/>For additional information, please visit <a href='https://askvu.vu.edu.au/'>ASKVU</a>".format(request.user.get_short_name())
 
