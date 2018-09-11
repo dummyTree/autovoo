@@ -1,1 +1,1 @@
-# autovoo
+This is an ancient website I built (My second website I ever made). The website was built to improve the efficiency of staff members I worked with at the time by saving them the time having to look things up on our website. This was my first python program built (before I knew anything about OBJ orientated design).
